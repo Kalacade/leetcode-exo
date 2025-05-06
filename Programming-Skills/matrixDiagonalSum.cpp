@@ -6,8 +6,32 @@ using namespace std;
 class Solution {
 public:
     int diagonalSum(vector<vector<int>>& mat) {
+        int firstDiag = 0;
+        int secondDiag = 0;
+
+        if(mat.size() == 1) {
+            return mat[0][0];
+        }
+
+        for(size_t i = 0; i < mat.size(); i++) {
+            firstDiag = firstDiag + mat[i][i];
+        }
+
+        for(size_t i = 0; i < mat.size(); i++) {
+            if (i != mat.size() - 1 - i) {
+                secondDiag += mat[i][mat.size() - 1 - i];
+            }
+        }
+
+        return secondDiag + firstDiag;
     }
 };
+
+/*
+[1 ,2, 3] i == line
+[4, 5 ,6] j == column
+[7 ,8, 9]
+*/
 
 int main() {
     Solution solution;

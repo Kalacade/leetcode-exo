@@ -6,9 +6,48 @@ using namespace std;
 class Solution {
 public:
     void setZeroes(vector<vector<int>>& matrix) {
-        
+        vector<pair<int, int>> zeros;
+
+        for (size_t i = 0; i < matrix.size(); i++) {
+            for (size_t j = 0; j < matrix[i].size(); j++) {
+                if (matrix[i][j] == 0) {
+                    zeros.push_back({i, j}); 
+                }
+            }
+        }
+
+        for (auto& pos : zeros) {
+            int ligne = pos.first;
+            int colonne = pos.second;
+
+            for (size_t j = 0; j < matrix[ligne].size(); j++) {
+                matrix[ligne][j] = 0;
+            }
+
+            for (size_t i = 0; i < matrix.size(); i++) {
+                matrix[i][colonne] = 0;
+            }
+        }
     }
 };
+
+/*
+[1,1,1]
+[1,0,1]
+[1,1,1]
+
+[1,0,1]
+[0,0,0]
+[1,0,1]
+
+[0,1,2,0]
+[3,4,5,2]
+[1,3,1,5]
+
+[0,0,0,0]
+[0,4,5,0]
+[0,3,1,0]
+*/
 
 int main() {
     Solution solution;

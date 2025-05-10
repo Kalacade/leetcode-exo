@@ -1,11 +1,29 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
 class Solution {
 public:
     int largestPerimeter(vector<int>& nums) {
+        // Étape 1 : On trie les longueurs en ordre décroissant
+        std::sort(nums.begin(), nums.end(), std::greater<int>());
+
+        // Étape 2 : On parcourt les triplets consécutifs
+        for (int i = 0; i < nums.size() - 2; ++i) {
+            int a = nums[i];
+            int b = nums[i + 1];
+            int c = nums[i + 2];
+
+            // Condition pour former un triangle : b + c > a
+            if (b + c > a) {
+                // On retourne le périmètre (a + b + c)
+                return a + b + c;
+            }
+        }
+
+        // Aucun triangle possible
         return 0;
     }
 };

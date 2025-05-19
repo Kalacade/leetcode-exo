@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/super/Documents/GitHub-Kalacade/leetcode-exo/Programming-Skills",
-      "program": "c:/Users/super/Documents/GitHub-Kalacade/leetcode-exo/Programming-Skills/build/Debug/outDebug",
+      "cwd": "c:/Users/super/Documents/GitHub-Kalacade/leetcode-exo/Others",
+      "program": "c:/Users/super/Documents/GitHub-Kalacade/leetcode-exo/Others/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
